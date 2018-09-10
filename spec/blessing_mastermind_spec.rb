@@ -1,6 +1,6 @@
 RSpec.describe BlessingMastermind do
   it "has a version number" do
-    expect(BlessingMastermind::VERSION).not_to be nil
+    expect(Mastermind::VERSION).not_to be nil
   end
 
   it "does something useful" do

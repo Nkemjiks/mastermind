@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "blessing_mastermind"
+require "mastermind"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
