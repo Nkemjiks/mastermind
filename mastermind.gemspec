@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["nkemjiks"]
   spec.email         = ["mbonunkemjika@ymail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-  spec.license       = "MIT"
+  spec.summary       = 'Mastermind is a game where you will guess the the colours the computer has in mind.'
+  spec.description   = 'Mastermind is a game where you will guess the the colours the computer has in mind. You will be told if you guess correctly or not. You will have to guess in the same order as the computer to win. Enjoy! :)'
+  spec.homepage      = 'https://github.com/nkemjiks/mastermind'
+  spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
