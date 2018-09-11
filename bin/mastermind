@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "mastermind"
+
+
+module Mastermind
+  puts Instructions.introductions
+  Game.start
+end
