@@ -1,6 +1,9 @@
-require "mastermind/version"
-
-module Mastermind
-  # Your code goes here...
-  puts 'running'
-end
+require_relative 'mastermind/version'
+require_relative 'mastermind/play_mode/match'
+require_relative 'mastermind/instructions'
+require_relative 'mastermind/gamelog'
+require_relative 'mastermind/play_mode/beginner'
+require_relative 'mastermind/play_mode/intermediate'
+require_relative 'mastermind/play_mode/advanced'
+require_relative 'mastermind/gameplay'
+require_relative 'mastermind/game'
