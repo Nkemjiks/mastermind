@@ -9,3 +9,6 @@ love guessed the sequence ["g", "r", "r", "b"] in 1 rounds within 6 seconds
 lobr guessed the sequence ["y", "y", "y", "r"] in 3 rounds within 18 seconds
 love guessed the sequence ["g", "y", "b", "g"] in 1 rounds within 8 seconds
 lve guessed the sequence ["b", "r", "b", "g"] in 1 rounds within 6 seconds
+Blessing guessed the sequence ["y", "r", "g", "g"] in 1 rounds within 5 seconds
+Blessing guessed the sequence ["b", "b", "r", "r"] in 1 rounds within 4 seconds
+Bless guessed the sequence ["c", "r", "c", "c", "b", "c"] in 2 rounds within 19 seconds

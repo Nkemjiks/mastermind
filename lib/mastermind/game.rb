@@ -33,11 +33,11 @@ module Mastermind
       def set_difficulty(difficulty)
         case difficulty 
         when 'b'
-          start_beginner_game ? start : nil
+          start_beginner_game
         when 'm'
-          start_intermidiate_game ? start : nil
+          start_intermidiate_game
         when "a"
-          start_advance_game ? start : nil
+          start_advance_game
         else
           invalid_entry_message
           play_game

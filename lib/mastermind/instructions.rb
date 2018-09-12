@@ -34,7 +34,7 @@ module Mastermind
 		def win_game(split_chosed_sequence, round, exact_match, partial_match, diff, generated_sequence)
 			puts "You played #{split_chosed_sequence}. Round #{round} 0f 12"
 			puts "You have #{exact_match} exact match(es) and #{partial_match} partial match(es)"
-			puts "    ********** You Win!!! **********"
+			puts "     #{'*' *  10} WINNER!!! #{'*' *  10}"
 			puts "        You won in #{diff.ceil} seconds within #{round} rounds"
 			puts "        The computer chose #{generated_sequence}"
 			puts "Please enter your name"
@@ -43,7 +43,7 @@ module Mastermind
 		def lose_game(split_chosed_sequence, round, exact_match, partial_match, diff, generated_sequence)
 			puts "You played #{split_chosed_sequence}. Round #{round} 0f 12"
 			puts "You have #{exact_match} exact match(es) and #{partial_match} partial match(es)"
-			puts "*   ********* You Lost!!! **********"
+			puts "     #{'*' *  10} LOSER!!! #{'*' *  10}"
 			puts "        You played for #{diff.ceil} seconds within #{round} rounds"
 			puts "        The computer chose #{generated_sequence}"
 		end
@@ -68,12 +68,12 @@ module Mastermind
 			puts "Your input is too short"
 		end
 
-		def exceed_hint_message
-			puts "You have exceeded your hint limit"
-		end
-
 		def hint_count_message(hint_count)
-			puts "You have #{hint_count} hint(s) left"
+			if hint_count > 0
+				puts "You have #{hint_count} hint(s) left"
+			else
+				puts "You have exceeded your hint limit"
+			end
 		end
 
 		def sequence_input_long_length_message
