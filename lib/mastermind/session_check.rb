@@ -3,7 +3,7 @@ module Mastermind
 		extend self
 
     include Instructions
-    
+
 		def player_input(user_input, difficulty, hint_count, generated_colors)
       if user_input == "q"
         quit_message
