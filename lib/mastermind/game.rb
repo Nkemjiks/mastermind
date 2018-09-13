@@ -1,4 +1,5 @@
 module Mastermind
+  # Game class
   class Game
     class << self
       include Instructions

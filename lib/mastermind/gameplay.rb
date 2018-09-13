@@ -1,6 +1,7 @@
 module Mastermind
+  # Gameplay Module
   module Gameplay
-    extend self
+    module_function
 
     include Instructions
     include Gamelog
@@ -18,24 +19,17 @@ module Mastermind
       start_game(8)
     end
 
-
     def start_game(difficulty)
       generated_colors = generate_colors(difficulty)
       round = 1
-      full_round = 12
       hint_count = difficulty == 8 ? 5 : difficulty == 6 ? 3 : 1
       start_time = Time.now
-      p generated_colors
       loop do
-        puts "Round #{'*' *  10} #{round} #{'*' *  10}"
-        user_input = gets.chomp
+        puts "Round #{'*' * 10} #{round} #{'*' * 10}"
 
-        player_input_response = player_input(user_input, difficulty, hint_count, generated_colors)
-        hint_count = player_input_response.is_a?(Array) ? player_input_response[1] : hint_count
-        should_next = player_input_response.is_a?(Array) ? player_input_response[0] : player_input_response
-        next if should_next
+        user_input_array = player_input(difficulty, hint_count, generated_colors)
+        next if user_input_array.nil?
 
-        user_input_array = user_input.split('')
         exact_matches = get_exact_matches(generated_colors.dup, user_input_array)
         partial_matches = get_partial_matches(exact_matches[0], user_input_array)
 
@@ -76,9 +70,9 @@ module Mastermind
     def get_partial_matches(generated_colors, user_input)
       partial_match_count = 0
 
-      user_input.each_with_index do |input, index|
+      user_input.each_with_index do |input, _index|
         match_index = generated_colors.index(input)
-        
+
         next if match_index.nil?
 
         generated_colors[match_index] = '#'
@@ -89,7 +83,7 @@ module Mastermind
     end
 
     def generate_colors(difficulty)
-      colors = %w(r g b y c m)
+      colors = %w[r g b y c m]
       generated_colors = []
       selection_limit = difficulty > colors.size ? colors.size : difficulty
 
@@ -100,6 +94,5 @@ module Mastermind
 
       generated_colors
     end
-
   end
 end

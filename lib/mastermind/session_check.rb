@@ -1,41 +1,38 @@
 module Mastermind
-	module SessionCheck
-		extend self
+  # Session Module
+  module SessionCheck
+    module_function
 
     include Instructions
 
-		def player_input(user_input, difficulty, hint_count, generated_colors)
-      if user_input == "q"
+    def player_input(difficulty, hint_count, generated_colors)
+      user_input = gets.chomp
+      colors = %w[r g b y c m]
+
+      if user_input == 'q'
         quit_message
         exit
-      elsif user_input == "h"
-        if hint_count > 0
-          hint = hint_message(generated_colors)
-          puts hint[rand(0..(difficulty - 4))]
-          hint_count -= 1
-          hint_count_message(hint_count)
-          return true, hint_count
-        else
-          hint_count_message(hint_count)
-          return true
-        end
+      elsif user_input == 'h'
+        check_hint(difficulty, hint_count, generated_colors)
       elsif user_input.length < difficulty
         sequence_input_short_length_message
-        return true
       elsif user_input.length > difficulty
         sequence_input_long_length_message
-        return true
-      end
-
-      colors = %w(r g b y c m)
-      user_input_array_split = user_input.split('')
-
-      is_valid_colors = user_input_array_split.all?{ |color| colors.include?(color) }
-
-      if !is_valid_colors
-        puts "Invalid Entry, Try again"
-        return true
+      elsif user_input.split('').all? { |color| colors.include?(color) } == false
+        invalid_entry_message
+      else
+        user_input.split('')
       end
     end
-	end
+
+    def check_hint(difficulty, hint_count, generated_colors)
+      if hint_count > 0
+        hint = rand(0..(difficulty - 4))
+        hint_message(generated_colors, hint)
+        hint_count -= 1
+      end
+      hint_count_message(hint_count)
+      player_input(difficulty, hint_count, generated_colors)
+    end
+  end
 end
