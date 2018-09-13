@@ -1,6 +1,6 @@
-require "mastermind/version"
-
-module Mastermind
-  # Your code goes here...
-  puts 'running'
-end
+require_relative 'mastermind/version'
+require_relative 'mastermind/instructions'
+require_relative 'mastermind/session_check'
+require_relative 'mastermind/gamelog'
+require_relative 'mastermind/gameplay'
+require_relative 'mastermind/game'
